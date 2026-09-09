@@ -6,8 +6,8 @@ Author: lineicons.com
 -------------------------------- */
 @font-face {
   font-family: 'LineIcons';
-  src: url('https://attaceph.github.io/ceptize/assets/fonts/LineIcons.eot');
-  src: url('https://attaceph.github.io/ceptize/assets/fonts/LineIcons.eot') format('embedded-opentype'), url('https://attaceph.github.io/ceptize/assets/fonts/LineIcons.woff2') format('woff2'), url('https://attaceph.github.io/ceptize/assets/fonts/LineIcons.woff') format('woff'), url('https://attaceph.github.io/ceptize/assets/fonts/LineIcons.ttf') format('truetype'), url('https://attaceph.github.io/ceptize/assets/fonts/LineIcons.svg') format('svg');
+  src: url('https://ceptize.github.io/ceptize/assets/fonts/LineIcons.eot');
+  src: url('https://ceptize.github.io/ceptize/assets/fonts/LineIcons.eot') format('embedded-opentype'), url('https://ceptize.github.io/ceptize/assets/fonts/LineIcons.woff2') format('woff2'), url('https://ceptize.github.io/ceptize/assets/fonts/LineIcons.woff') format('woff'), url('https://ceptize.github.io/ceptize/assets/fonts/LineIcons.ttf') format('truetype'), url('https://ceptize.github.io/ceptize/assets/fonts/LineIcons.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
