@@ -633,7 +633,7 @@ Everyday, we build the short list of uniquely & payable software opportunities.
       pageLink.forEach((elem) => {
         elem.addEventListener("click", (e) => {
           e.preventDefault();
-          document.querySelector(elem.getAttribute("href")).scrollIntoView({
+          document.querySelector(elem.getAttribute("href").replaceAll('https://ceptize.github.io/index.html', '')).scrollIntoView({
             behavior: "smooth",
             offsetTop: 1 - 60,
           });
