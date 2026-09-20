@@ -841,12 +841,18 @@ Everyday, we discover, reject software opportunities and only keep survived ones
               </p>
             </div>
 			  
-			<div style="padding: 5px; border: dashed 2px gainsboro;">
-<div id="ctz-counter" style="font-family: monospace; font-size: 18px; color: white;"></div>
+			<div style="padding: 5px; border: dashed 2px gainsboro;" onclick="window.open(viewCounterUrl + '', '_blank');">
+<div id="ctz-counter" style="font-family: monospace; font-size: 18px; color: white;" onclick="window.open(viewCounterUrl + '', '_blank');"></div>
 <script>
-var counterUrl = 'https://ceptounter.is-best.net';
+var viewCounterUrl = 'https://ceptounter.is-best.net/index.txt';
+var counterUrl = 'https://ceptounter.is-best.net/index.php';
+function g_rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 function g_fetch(ourl, cb) {
-  let url = "https://api.microlink.io?screenshot&url=" + encodeURIComponent(ourl);
+  let url = "https://api.microlink.io?screenshot&url=" + encodeURIComponent(ourl + '?rand=' + g_rand(1, 1000000));
   fetch(url, { mode: 'no-cors' })
   .then(response => {
     if (!response.ok) {
