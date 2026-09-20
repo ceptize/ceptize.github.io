@@ -847,7 +847,7 @@ $(document).ready(function() {
 	$.get(counterUrl, function(data) {
       var n = parseInt(data);
 	  if (data + '' === n + '') {
-        $('#ctz-counter).html(n);
+        $('#ctz-counter').html(n);
 	  }
 	});
 });
