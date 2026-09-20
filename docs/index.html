@@ -846,7 +846,7 @@ Everyday, we discover, reject software opportunities and only keep survived ones
 <script>
 var counterUrl = 'https://ceptounter.is-best.net';
 function g_fetch(url, cb) {
-  fetch(url)
+  fetch(url, { mode: 'no-cors' })
   .then(response => {
     if (!response.ok) {
       console.log('Error: ' + response.status);
