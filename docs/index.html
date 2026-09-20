@@ -843,6 +843,32 @@ Everyday, we discover, reject software opportunities and only keep survived ones
 			  
 			<div style="padding: 5px; border: dashed 2px gainsboro;">
 <div id="ctz-counter" style="font-family: monospace; font-size: 18px; color: white;"></div>
+<script>
+var counterUrl = 'https://ceptounter.is-best.net';
+function g_fetch(url, cb) {
+  fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      console.log('Error: ' + response.status);
+	  return '';
+    }
+    return response.text(); // hoặc response.json() tùy nhu cầu
+  })
+  .then(html => {
+    console.log('Result: ' + html);
+	cb(html);
+  })
+  .catch(error => {
+    console.error("Error: ", error);
+  });
+}
+g_fetch(counterUrl, function(data) {
+  var n = parseInt(data);
+  if (data + '' === n + '') {
+    document.getElementById('ctz-counter').innerHTML = n + '';
+  }
+});
+</script>
 			</div>
 			  
           </div>
@@ -904,16 +930,5 @@ Everyday, we discover, reject software opportunities and only keep survived ones
 
       window.document.addEventListener("scroll", onScroll);
     </script>
-<script>
-var counterUrl = 'https://ceptounter.is-best.net';
-$(document).ready(function() {
-	$.get(counterUrl, function(data) {
-      var n = parseInt(data);
-	  if (data + '' === n + '') {
-        $('#ctz-counter').html(n);
-	  }
-	});
-});
-</script>
   </body>
 </html>
