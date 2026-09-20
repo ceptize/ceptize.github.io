@@ -382,10 +382,45 @@ Everyday, we discover, reject software opportunities and only keep survived ones
                 <a href="https://uideck.com" rel="nofollow">UIdeck</a>
               </p>
             </div>
-			<div style="padding: 5px; border: dashed 2px gainsboro;">
-<a href='https://www.free-counters.org/'>https://www.Free-Counters.org</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=37c65f8cb50714861a8b121cc3a26a93e8f18e18'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1647232/t/5"></script>
+			<div style="padding: 5px; border: dashed 2px gainsboro;" onclick="window.open(viewCounterUrl + '', '_blank');">
+<div id="ctz-counter" style="font-family: monospace; font-size: 12px; color: white;" onclick="window.open(viewCounterUrl + '', '_blank');">Click here to view counter!</div>
+<iframe src="" frameborder="no" style="height: 30px; width: 200px;">https://ceptounter.is-best.net/index.txt</iframe>
+<script>
+var viewCounterUrl = 'https://ceptounter.is-best.net/index.txt';
+var counterUrl = 'https://ceptounter.is-best.net/index.php';
+function g_rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function g_fetch(ourl, cb) {
+  viewCounterUrl = viewCounterUrl + '?rand=' + g_rand(1, 1000000);
+  let url = "https://api.microlink.io?screenshot&url=" + encodeURIComponent(ourl + '?rand=' + g_rand(1, 1000000));
+  fetch(url, { mode: 'no-cors' })
+  .then(response => {
+    if (!response.ok) {
+      console.log('Error: ' + response.status);
+	  return '';
+    }
+    return response.text(); // hoặc response.json() tùy nhu cầu
+  })
+  .then(html => {
+    console.log('Result: ' + html);
+	cb(html);
+  })
+  .catch(error => {
+    console.error("Error: ", error);
+  });
+}
+g_fetch(counterUrl, function(data) {
+  var n = parseInt(data);
+  if (data + '' === n + '') {
+    //document.getElementById('ctz-counter').innerHTML = n + '';
+  }
+});
+</script>
 			</div>
+
           </div>
         </div>
       </div>
