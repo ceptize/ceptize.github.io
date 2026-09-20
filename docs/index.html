@@ -841,17 +841,8 @@ Everyday, we discover, reject software opportunities and only keep survived ones
               </p>
             </div>
 			  
-			<div style="padding: 5px; border: dashed 2px gainsboro;"><script>
-var counterUrl = 'https://ceptounter.is-best.net';
-$(document).ready(function() {
-	$.get(counterUrl, function(data) {
-      var n = parseInt(data);
-	  if (data + '' === n + '') {
-        $('#ctz-counter').html(n);
-	  }
-	});
-});
-</script><div id="ctz-counter" style="font-family: monospace; font-size: 18px; color: white;"></div>
+			<div style="padding: 5px; border: dashed 2px gainsboro;">
+<div id="ctz-counter" style="font-family: monospace; font-size: 18px; color: white;"></div>
 			</div>
 			  
           </div>
@@ -913,5 +904,16 @@ $(document).ready(function() {
 
       window.document.addEventListener("scroll", onScroll);
     </script>
+<script>
+var counterUrl = 'https://ceptounter.is-best.net';
+$(document).ready(function() {
+	$.get(counterUrl, function(data) {
+      var n = parseInt(data);
+	  if (data + '' === n + '') {
+        $('#ctz-counter').html(n);
+	  }
+	});
+});
+</script>
   </body>
 </html>
