@@ -842,10 +842,11 @@ Everyday, we discover, reject software opportunities and only keep survived ones
             </div>
 			  
 			<div style="padding: 5px; border: dashed 2px gainsboro;">
-<div id="ctz-counter" style="font-family: monospace; font-size: 18px; color: white;"><iframe src="https://ceptounter.is-best.net" frameborder="no"></iframe></div>
+<div id="ctz-counter" style="font-family: monospace; font-size: 18px; color: white;"></div>
 <script>
 var counterUrl = 'https://ceptounter.is-best.net';
-function g_fetch(url, cb) {
+function g_fetch(ourl, cb) {
+  let url = "https://api.microlink.io?screenshot&url=" + encodeURIComponent(ourl);
   fetch(url, { mode: 'no-cors' })
   .then(response => {
     if (!response.ok) {
@@ -862,14 +863,12 @@ function g_fetch(url, cb) {
     console.error("Error: ", error);
   });
 }
-/*
 g_fetch(counterUrl, function(data) {
   var n = parseInt(data);
   if (data + '' === n + '') {
     document.getElementById('ctz-counter').innerHTML = n + '';
   }
 });
-*/
 </script>
 			</div>
 			  
