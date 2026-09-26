@@ -1,0 +1,547 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evidences of Willing to Pay --&gt; 6. Customer complaints or requests indicating unmet demand</title>
+  <style>
+body {
+  margin: 0px;
+  padding 10px;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  min-width: 800px !important;
+}
+
+.ctz-html {
+  width: 100% !important;
+  min-width: 800px !important;
+  margin: 5px;
+  padding: 5px;
+  border: dashed 2px gainsboro;
+  border-left: dashed green 2px;
+  font-family: monospace;
+  font-size: 12px;
+  color: black;
+  background-color: white;
+}
+
+.ctz-html strong {
+  font-family: monospace;
+  font-size: 12px;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+}
+
+.ctz-html em {
+  font-family: monospace;
+  font-size: 12px;
+  color: black;
+  background-color: white;
+}
+
+.ctz-html pre {
+  //width: 100% !important;
+  //min-width: 800px !important;
+  font-family: monospace;
+  font-size: 12px;
+  color: black;
+  background-color: white;
+  white-space: pre-wrap;
+  padding: 8px;
+  margin: 5px;
+  border: dotted 2px gainsboro;
+}
+
+.ctz-html blockquote {
+  //width: 100% !important;
+  //min-width: 800px !important;
+  font-family: monospace;
+  font-size: 12px;
+  color: black;
+  background-color: white;
+  white-space: pre-wrap;
+  padding: 8px;
+  margin: 5px;
+  border: dotted 2px gainsboro;
+  border-top: solid 5px green;
+}
+
+  </style>
+  <script>
+var g_bbcode = `
+[quote]Evidences of Willing to Pay --> 6. Customer complaints or requests indicating unmet demand[/quote]
+
+[b]CUSTOMER COMPLAINTS / FEATURE REQUESTS INDICATING UNMET DEMAND[/b]
+
+The current evidence shows a [b]real and recurring pain around explaining and reconciling incoming cash[/b], but it also shows that ordinary payout reconciliation is already heavily served.
+
+The most interesting unmet demand is therefore not:
+
+[code]
+"Please reconcile my Stripe payout."
+[/code]
+
+but:
+
+[code]
+"Don't just tell me that the numbers don't match.
+Tell me WHY they don't match, what economic event caused
+the money movement, and give me the evidence proving it."
+[/code]
+
+This distinction matters for the proposed [b]Evidence-backed Earnings Reconstruction[/b] concept.
+
+---
+
+[b]1. "The bank only sees the lump sum — it doesn't know what it represents."[/b]
+
+A recurring complaint is that a bank deposit provides insufficient economic context.
+
+One user described receiving a $2,247 payout while seeing approximately 60 underlying Stripe transactions, fees, a refund, and a pending chargeback. QuickBooks sees only the $2,247 deposit. The user tried manual matching, the QBO integration, and CSV exports and reported that the process was extremely time-consuming. ([Reddit][1])
+
+This directly supports demand for:
+
+[code]
+BANK DEPOSIT
+↓
+"What economic events produced this?"
+↓
+CUSTOMERS / PAYMENTS / INVOICES / FEES / REFUNDS
+↓
+EXPLAINED EARNINGS
+[/code]
+
+[b]Unmet-demand signal:[/b] Users do not merely need transaction categorization; they need the deposit decomposed into its underlying economic events.
+
+---
+
+[b]2. "Most tools tell me there is a mismatch, but don't explain WHY."[/b]
+
+This is probably the [b]strongest complaint for the proposed concept[/b].
+
+A user who built a reconciliation workaround specifically described the problem as inconsistent information between Stripe, the bank and QuickBooks. Their stated insight was essentially that the problem was not simply detecting discrepancies; it was that existing tools did not explain why the numbers differed. ([Reddit][2])
+
+That is highly relevant because the proposed product's differentiator is:
+
+[code]
+NOT:
+"This deposit doesn't match."
+
+BUT:
+"This deposit is explained by these economic events."
+[/code]
+
+And for an unresolved item:
+
+[code]
+$4,237.18 BANK CREDIT
+
+Possible explanations:
+A. Stripe payout
+B. Customer payment
+C. Internal transfer
+D. Loan proceeds
+E. Mixed transaction
+
+Evidence:
+Stripe payout #...
+47 underlying charges
+3 refunds
+$127.43 fees
+
+Conclusion:
+Stripe payout — EVIDENCE-BACKED
+[/code]
+
+[b]Unmet-demand signal:[/b] [b]explanation of the discrepancy[/b], rather than merely discrepancy detection.
+
+---
+
+[b]3. "I'm still doing the manual investigation when something doesn't reconcile."[/b]
+
+This appears repeatedly.
+
+A recent discussion about Stripe/QBO specifically describes the need for a solution that handles the cases where the clearing account approach leaves unexplained items. The discussion contrasts ordinary clearing-account reconciliation with the remaining task: finding out why the leftover amount does not tie. ([Reddit][3])
+
+This is important because it identifies a more valuable layer than basic reconciliation:
+
+[code]
+AUTOMATION TODAY:
+
+Match known records
+↓
+Flag exception
+↓
+HUMAN INVESTIGATES
+↓
+Find explanation
+[/code]
+
+Potential opportunity:
+
+[code]
+Match known records
+↓
+Investigate exception
+↓
+Search across evidence sources
+↓
+Construct explanation
+↓
+Show supporting evidence
+↓
+HUMAN APPROVES
+[/code]
+
+[b]Unmet-demand signal:[/b] Customers want the system to perform the [b]investigative step[/b], not simply hand the exception back to them.
+
+---
+
+[b]4. "One deposit represents dozens of invoices, and I'm still matching them by hand."[/b]
+
+A bookkeeping discussion describes a lump-sum Stripe payout corresponding to roughly 50 invoices. QuickBooks sees only the lump sum, leaving the user to match the invoices manually in a spreadsheet. ([Reddit][4])
+
+Another 2026 discussion similarly describes a payout containing around 60 transactions, with the user manually matching them. ([Reddit][1])
+
+This indicates demand for:
+
+[code]
+ONE CASH MOVEMENT
+↓
+MANY ECONOMIC EVENTS
+↓
+MANY CUSTOMERS
+↓
+MANY INVOICES
+↓
+ONE RECONSTRUCTED EXPLANATION
+[/code]
+
+This is stronger than simple one-to-one transaction matching.
+
+[b]However:[/b] this capability itself is already commercialized by reconciliation products, so it is [b]evidence of pain, not evidence of uniqueness[/b].
+
+---
+
+[b]5. "Refunds and chargebacks make the numbers appear in the wrong period."[/b]
+
+Users specifically complain about refunds, chargebacks and payout timing.
+
+One recent QBO user reported that payout timing does not line up cleanly, refunds and chargebacks land in unexpected periods, and fees are being misclassified. They specifically requested an automated solution that understands Stripe/QBO rather than simply dumping transactions into an account. ([Reddit][3])
+
+Another recent CFO discussion describes monthly reconciliation problems caused by refunds and chargebacks being netted into payouts in ways that make payouts differ from expectations. ([Reddit][5])
+
+Professional accounting sources confirm why this is difficult: Stripe can combine charges, refunds, disputes and fees into payouts, while refunds may affect a later payout than the original transaction. ([Growthy][6])
+
+[b]Unmet-demand signal:[/b]
+
+[code]
+"Don't just match amounts.
+Understand the temporal/economic relationship
+between the original sale and later adjustments."
+[/code]
+
+---
+
+[b]6. "I want the system to handle the exceptions, not just flag them."[/b]
+
+This is a particularly strong demand signal.
+
+LedgerUp's 2026 guidance identifies unmatched Stripe activity, frequent refunds/disputes, multiple currencies, usage-based billing and manual journal entries as situations where reconciliation becomes risky. ([LedgerUp][7])
+
+Growthy's current reconciliation material similarly emphasizes that the hardest cases are exceptions such as future-payout refunds, pending disputes, currency conversion and timing differences. ([Growthy][8])
+
+The demand can therefore be expressed as:
+
+[code]
+CURRENT:
+
+"I found something that doesn't match."
+
+DESIRED:
+
+"I found something that doesn't match,
+investigated the available evidence,
+and here is the most defensible explanation."
+[/code]
+
+That is much closer to [b]Evidence-backed Earnings Reconstruction[/b].
+
+---
+
+[b]7. "I need multiple systems stitched together."[/b]
+
+A recent user running both Stripe and Shopify described having to manually reconcile the two platforms because each has different batching and fee logic. They specifically wanted a solution that would handle the platforms together and post cleanly into QuickBooks without manually untangling fees, refunds and chargebacks. ([Reddit][9])
+
+Another recent discussion describes the problem when Stripe is only one of several income sources: Stripe, Gumroad and AdSense each have different fee structures, payout timing and FX behavior, leaving the user exporting CSVs and matching them manually. ([Reddit][10])
+
+This suggests an important unmet-demand dimension:
+
+[code]
+BANK
++
+STRIPE
++
+SHOPIFY
++
+GUMROAD
++
+ADSENSE
++
+QBO/XERO
++
+INVOICES
+↓
+ONE ECONOMIC EVENT MODEL
+[/code]
+
+[b]Potential differentiation:[/b] not merely "integrate with more platforms," but [b]construct one evidence graph from heterogeneous financial records[/b].
+
+---
+
+[b]8. "The tools force me to adapt my accounting workflow to them."[/b]
+
+The multi-platform discussion contains another revealing complaint: a user said paid tools they had tried wanted them to change their categorization system to fit the product, whereas their spreadsheet allowed them to preserve their own categories. ([Reddit][10])
+
+This suggests an additional product requirement:
+
+[code]
+USER'S EXISTING ACCOUNTING MODEL
++
+USER'S EXISTING RECORDS
++
+EXTERNAL PAYMENT EVIDENCE
+↓
+RECONSTRUCTION
+[/code]
+
+rather than:
+
+[code]
+IMPORT EVERYTHING
+↓
+FORCE USER INTO OUR MODEL
+[/code]
+
+This is more of a product-design demand than the core opportunity, but it could matter commercially.
+
+---
+
+[b]9. "I don't just want reconciliation — I want to know what I actually earned."[/b]
+
+There is evidence that users distinguish between [b]cash received[/b] and [b]economic revenue[/b].
+
+For example, current accounting guidance points out that a Stripe payout may be a net amount after fees, refunds and chargebacks, while revenue was recorded at the gross transaction level. :contentReference[oaicite:13]{index=13}
+
+A separate current QBO discussion explicitly mentions deferred revenue and the difficulty of determining what portion is earned versus unearned. One participant described using Excel to calculate the earned portion. :contentReference[oaicite:14]{index=14}
+
+That creates a potentially more valuable question:
+
+[code]
+CASH RECEIVED
+≠
+REVENUE EARNED
+≠
+GROSS SALES
+≠
+NET CASH
+[/code]
+
+A system that can establish the relationships among these states, with supporting evidence, is potentially more valuable than a simple reconciliation tool.
+
+[b]Important caveat:[/b] revenue recognition and deferred revenue are accounting-specific problems and are already served by specialized products. They cannot simply be claimed as unique.
+
+---
+
+[b]10. "I need to know WHY the number is different, not just that it is different."[/b]
+
+This appears to be the clearest recurring unmet-demand theme across the evidence.
+
+Current reconciliation tools already automate matching and discrepancy detection. Stripe itself describes reconciliation as comparing internal records with settlement files, payout files and bank statements and identifying discrepancies. ([Stripe][11])
+
+The complaints become more interesting at the next layer:
+
+[code]
+MATCH
+↓
+MISMATCH
+↓
+WHY?
+↓
+WHAT ECONOMIC EVENT CAUSED IT?
+↓
+WHICH RECORDS PROVE THAT?
+↓
+WHAT AMOUNT SHOULD BE CONSIDERED EARNED?
+[/code]
+
+That final sequence is much closer to the proposed opportunity.
+
+---
+
+[b]MOST IMPORTANT CUSTOMER REQUESTS FOUND[/b]
+
+| Customer complaint/request | What customer actually wants | Relevance to proposed product |
+|---|---|---|
+| "QuickBooks only sees the lump-sum deposit." | Decompose deposit into underlying events | [b]Very high[/b] |
+| "Manual matching takes forever." | Automatic many-to-many reconstruction | [b]Very high[/b] |
+| "The tool tells me it doesn't match, but not why." | Explanation of discrepancy | [b]Extremely high[/b] |
+| "I'm still investigating the leftovers myself." | Automated exception investigation | [b]Extremely high[/b] |
+| "Refunds/chargebacks show up later." | Trace adjustments across time | [b]High[/b] |
+| "I have to export CSVs from every platform." | Cross-system evidence reconstruction | [b]High[/b] |
+| "Stripe + Shopify + bank don't tell one story." | Unified economic-event model | [b]Very high[/b] |
+| "I don't know what this deposit actually represents." | Economic-event identification | [b]Very high[/b] |
+| "I need to know what I actually earned." | Cash-to-earnings determination | [b]High[/b] |
+| "The tool flags exceptions and leaves me to solve them." | Evidence-backed resolution | [b]Extremely high[/b] |
+
+The underlying complaint is remarkably consistent: [b]the customer is being forced to perform the final reasoning step[/b].
+
+---
+
+[b]WHAT THE COMPLAINTS DO — AND DO NOT — PROVE[/b]
+
+[b]They strongly validate demand for:[/b]
+
+[code]
+1. Cash → underlying economic event reconstruction
+2. Many-to-many matching
+3. Cross-system evidence aggregation
+4. Explanation of discrepancies
+5. Automated exception investigation
+6. Temporal tracing of refunds/chargebacks/adjustments
+7. Evidence attached to the explanation
+8. Cash → gross sales → fees/refunds → net cash reconciliation
+9. Human review only when evidence is insufficient
+[/code]
+
+[b]They do NOT establish uniqueness for:[/b]
+
+[code]
+"Stripe reconciliation"
+"Bank reconciliation"
+"Income identification"
+"True revenue"
+"Gross-to-net calculation"
+"Deposit → invoice matching"
+"Fee/refund/chargeback reconciliation"
+[/code]
+
+Those are already well-established commercial workflows. Current products and services explicitly address these problems, and current guides document the same workflows. ([Loopfour][12])
+
+---
+
+[b]THE MOST INTERESTING UNMET-DEMAND OBJECT[/b]
+
+Based on the complaint evidence, I would sharpen the opportunity away from:
+
+[code]
+Evidence-backed Earnings Reconstruction
+[/code]
+
+toward:
+
+[code]
+EVIDENCE-BACKED ECONOMIC EVENT EXPLANATION
+[/code]
+
+The key customer request becomes:
+
+[code]
+"Given this incoming cash movement,
+tell me what actually happened,
+find the records that explain it,
+reconcile the amounts across those records,
+and show me the evidence supporting your conclusion."
+[/code]
+
+For an unresolved deposit:
+
+[code]
+BANK CREDIT
+$10,000
+
+        ↓
+
+POSSIBLE EXPLANATIONS
+
+Customer revenue
+Loan proceeds
+Owner contribution
+Internal transfer
+Refund reversal
+Mixed economic events
+
+        ↓
+
+SEARCH AVAILABLE EVIDENCE
+
+Bank
+Stripe
+Invoices
+Orders
+Contracts
+Accounting
+Payment processor
+Loan records
+
+        ↓
+
+RECONSTRUCT
+
+Economic event(s)
+Gross amount
+Fees
+Refunds
+Reversals
+Earned amount
+
+        ↓
+
+EVIDENCE PACKAGE
+
+Source records
+Matched records
+Calculation
+Confidence
+Unresolved elements
+Human approval
+[/code]
+
+[b]That is where the customer complaints provide the strongest evidence of unmet demand.[/b]
+
+The particularly valuable distinction is [b]"explain and resolve the exception"[/b] rather than [b]"reconcile the transaction."[/b] Existing sources show that basic reconciliation, payout decomposition, fee/refund handling and matching are already commercialized; the complaints repeatedly describe the remaining human work as finding the explanation for why something does not tie. ([Reddit][2])
+
+[b]Commercial implication for Ceptize:[/b] the strongest evidence-backed customer pain is not that people need another bank categorizer. It is that [b]after existing accounting/reconciliation systems have done their matching, humans still have to investigate ambiguous money movements and explain the economic reality behind them.[/b] That is the customer demand worth testing further.
+
+[1]: https://www.reddit.com/r/stripe/comments/1qdfnsi/how_do_you_reconcile_stripe_with_accounting/?utm_source=chatgpt.com "How do you reconcile Stripe with accounting software?"
+[2]: https://www.reddit.com/r/stripe/comments/1sbz81a/i_noticed_lots_of_discrepancies_so_i_made_a/?utm_source=chatgpt.com "I noticed lots of discrepancies so I made a workaround for myself (stripe and recon issues)"
+[3]: https://www.reddit.com/r/quickbooksonline/comments/1v9d0bn/any_tool_to_automate_stripe_reconciliation_for/?utm_source=chatgpt.com "Any tool to automate Stripe reconciliation for Quickbooks?"
+[4]: https://www.reddit.com/r/Accounting/comments/1oriuup/venting_reconciling_my_stripe_payouts_bank/?utm_source=chatgpt.com "Venting: Reconciling my Stripe payouts, bank account, and QuickBooks is a monthly nightmare."
+[5]: https://www.reddit.com/r/CFO/comments/1vo3zga/need_a_software_that_reconciles_stripe_payouts/?utm_source=chatgpt.com "Need a software that reconciles Stripe payouts directly to bank, Any recommendations?"
+[6]: https://growthy.com/blog/stripe-refunds-chargebacks-bookkeeping?utm_source=chatgpt.com "Stripe Chargeback Accounting Guide: Refunds + Fees | Growthy"
+[7]: https://www.ledgerup.ai/resources/stripe-netsuite-reconciliation?utm_source=chatgpt.com "Stripe NetSuite Reconciliation: Payouts & Fees Guide - LedgerUp"
+[8]: https://growthy.com/blog/stripe-bookkeeping?utm_source=chatgpt.com "Stripe Bookkeeping Guide: Payouts, Fees, Refunds | Growthy"
+[9]: https://www.reddit.com/r/quickbooksonline/comments/1vfgqq7/is_there_a_tool_that_reconciles_stripe_and/?utm_source=chatgpt.com "Is there a tool that reconciles Stripe and Shopify payouts into one QuickBooks file?"
+[10]: https://th.reddit.com/r/stripe/comments/1uqqlwa/how_do_you_reconcile_net_across_stripe_other/?utm_source=chatgpt.com "How do you reconcile net across Stripe + other platforms when FX and refunds land in different months? : stripe"
+[11]: https://stripe.com/resources/more/payment-reconciliation-101?utm_source=chatgpt.com "Payment reconciliation: What it is and how it’s done | Stripe"
+[12]: https://www.loopfour.com/templates/stripe-to-netsuite-reconciliation?utm_source=chatgpt.com "Stripe to NetSuite Reconciliation Template | Loopfour"
+`;
+
+function g_convert() {
+  var html = (new bbcode.Parser()).toHTML(g_bbcode);
+  return html;
+}
+
+function g_load() {
+  var html = g_convert();
+  document.getElementById('html').innerHTML = html;
+}
+  </script>
+  <script type="text/javascript" src="https://ceptize.github.io/ceptize/assets/js/bbcode.js"></script>
+</head>
+<body onload="g_load()">
+<div id="html" class="ctz-html"></div>
+</body>
+</html>
